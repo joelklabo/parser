@@ -1,0 +1,42 @@
+*title
+This is the first post on my blog
+do newlines get respected?
+
+*body
+This is the body of my first post about a bunch of things
+and I am definetely not going to use any punctuation
+no matter what anybody says, ok?
+This is the body of my first post about a bunch of things
+This is the body of my first post about a bunch of things
+This is the body of my first post about a bunch of things
+This is the body of my first post about a bunch of things
+and I am definetely not going to use any punctuation
+no matter what anybody says, ok?
+and I am definetely not going to use any punctuation
+no matter what anybody says, ok?
+and I am definetely not going to use any punctuation
+no matter what anybody says, ok?
+and I am definetely not going to use any punctuation
+no matter what anybody says, ok?
+
+*[]tags
+Primary
+Secondary
+
+*doop
+this is a thisng
+
+*[]numbers
+one
+two 
+three
+four
+five
+six
+seven
+eight
+nine
+ten
+eleven
+twelve
+
