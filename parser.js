@@ -1,5 +1,5 @@
 /**
- * Read an arbitrary text file and transform it into an JSON object
+ * Read a text file and transform it into an JSON object
  */
 var fs = require('fs');
 
@@ -58,21 +58,47 @@ Parser.prototype.getPropType = function (line) {
   if (line.indexOf('[]') == 0) {
     this.type = 'array';
     this.prop = this.prop.substr(2);
+    return;
+  } else if (line.indexOf('.') == 0) {
+    this.type = 'float';
+    this.prop = this.prop.substr(1);
+    return;
+  } else if (line.indexOf('#') == 0) {
+    this.type = 'integer';
+    this.prop = this.prop.substr(1);
+    return;
+  } else if (line.indexOf(':') == 0) {
+    this.type = 'date';
+    this.prop = this.prop.substr(1);
+    return;
   } else {
     this.type = 'string'; 
+    return;
   }
 }
 
 Parser.prototype.addValue = function (line) {
-  if (line != '') {
-    if (this.type == 'array') {
-      if (Array.isArray(this.value)) {
-        this.value.push(line);
-      } else {
-        this.value = [line];
-      }
-    } else {
-      this.value += line;
+  if (line != '' || this.type == 'date') {
+    switch (this.type) {
+      case 'array':
+        if (Array.isArray(this.value)) {
+          this.value.push(line);
+        } else {
+          this.value = [line];
+        }
+        break;
+      case 'float':
+        this.value = parseFloat(line);
+        break;
+      case 'integer': 
+        this.value = parseInt(line);
+        break;
+      case 'date':
+        this.value = new Date();
+        break;
+      default:
+        this.value += line;
+        break;
     }
   }
 }
