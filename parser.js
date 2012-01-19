@@ -97,7 +97,7 @@ Parser.prototype.addValue = function (line) {
         this.value = new Date();
         break;
       default:
-        this.value += line;
+        this.value += line + '\n';
         break;
     }
   }
