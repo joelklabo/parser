@@ -1,11 +1,11 @@
 ## Simple parser for making JSON objects
 
 ###Property Types:
-    `*` Strings
-    `*[]` Arrays
-    `*:` Date (Always set to current time.)
-    `*.` Float
-    `*#` Integer
+`*`   Strings
+`*[]` Arrays
+`*:`  Date (Always set to current time.)
+`*.`  Float
+`*#`  Integer
 
 ###Usage:
     node main.js object.txt
